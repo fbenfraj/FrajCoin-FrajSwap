@@ -4,8 +4,8 @@ import frajcoin from "./ethereum/frajcoin";
 import frajswap from "./ethereum/frajswap";
 import ActionForm from "./components/ActionForm/ActionForm";
 import { coin, rocket, wink } from "./utils/emojis";
-import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
+import "./App.css";
 
 function App() {
   const [accounts, setAccounts] = useState([]);
