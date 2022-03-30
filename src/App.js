@@ -3,7 +3,9 @@ import web3 from "./ethereum/web3";
 import frajcoin from "./ethereum/frajcoin";
 import frajswap from "./ethereum/frajswap";
 import ActionForm from "./components/ActionForm/ActionForm";
+import { coin, rocket, wink } from "./utils/emojis";
 import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const [accounts, setAccounts] = useState([]);
@@ -42,41 +44,66 @@ function App() {
   };
 
   return (
-    <main className="main-container">
-      <section>
-        <h1>Welcome to FrajSwap!</h1>
-        <h2 className="main-subtitle">FrajCoin to the moon!</h2>
-        <p className="presentation">
-          FrajCoin is an ERC-20 token and FrajSwap is a decentralized exchange.
-          You can access the source code{" "}
-          <a
-            href="https://github.com/fbenfraj/FrajCoin-FrajSwap"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            here
-          </a>
-          .
-          <br />
-          They are both build with Solidity and the contracts are deployed on
-          the Rinkeby Network. <br /> You can use the widgets below to buy
-          FrajCoins with ETH or sell them to get ETH back.
-          <br /> This project is for demonstration purpose only.
-        </p>
-      </section>
-      <section className="action-forms">
-        <ActionForm
-          actionName="buy"
-          actionMethod={buyTokens}
-          placeholder="Amount of ETH to sell"
-        />
-        <ActionForm
-          actionName="sell"
-          actionMethod={sellTokens}
-          placeholder="Amount of FRAJ to sell"
-        />
-      </section>
-    </main>
+    <>
+      <Navbar account={accounts[0]} />
+      <main className="main-container">
+        <section>
+          <h1>Welcome to FrajSwap{coin}</h1>
+          <h2 className="main-subtitle">
+            FrajCoin to the moon! {rocket}
+            {rocket}
+            {rocket}
+          </h2>
+          <p className="presentation">
+            FrajCoin is an ERC-20 token and FrajSwap is a decentralized
+            exchange. You can access the source code{" "}
+            <a
+              href="https://github.com/fbenfraj/FrajCoin-FrajSwap"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              here
+            </a>
+            .
+            <br />
+            They are both build with Solidity and the contracts are deployed on
+            the Rinkeby Network (Ethereum testnet). <br />
+            Use the{" "}
+            <a
+              href="https://github.com/fbenfraj/FrajCoin-FrajSwap"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Rinkeby Authenticated Faucet
+            </a>{" "}
+            or the{" "}
+            <a
+              href="https://github.com/fbenfraj/FrajCoin-FrajSwap"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chainlink Rinkeby Faucet
+            </a>{" "}
+            to get Ethereum for free{wink} (they are of course worth nothing)
+            <br /> You can use the widgets below to buy FrajCoins with ETH or
+            sell them to get ETH back.
+            <br /> This project is for demonstration purpose only.
+          </p>
+        </section>
+        <section className="action-forms">
+          <ActionForm
+            actionName="buy"
+            actionMethod={buyTokens}
+            placeholder="Amount of ETH to sell"
+          />
+          <ActionForm
+            actionName="sell"
+            actionMethod={sellTokens}
+            placeholder="Amount of FRAJ to sell"
+          />
+        </section>
+      </main>
+    </>
   );
 }
 

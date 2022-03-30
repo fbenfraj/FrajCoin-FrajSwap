@@ -39,6 +39,10 @@ input::placeholder {
   text-transform: uppercase;
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
 button {
   width: 90%;
   height: 50px;
@@ -49,4 +53,13 @@ button {
   color: #ffffff;
   cursor: pointer;
   line-height: 20px;
+}
+
+button:hover {
+  filter: brightness(70%);
+  -webkit-transition: all 0s ease;
+  -moz-transition: all 0s ease;
+  -o-transition: all 0s ease;
+  -ms-transition: all 0s ease;
+  transition: all 0s ease;
 }
