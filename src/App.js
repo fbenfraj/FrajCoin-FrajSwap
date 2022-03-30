@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import web3 from "./ethereum/web3";
+import frajcoin from "./ethereum/frajcoin";
 import frajswap from "./ethereum/frajswap";
 import "./App.css";
 import ActionForm from "./components/ActionForm";
@@ -25,6 +26,21 @@ function App() {
     });
   };
 
+  const sellTokens = async (e, soldFrajAmount) => {
+    e.preventDefault();
+
+    const frajswapAddress = frajswap.options.address;
+    const realSoldFrajAmount = web3.utils.toWei(soldFrajAmount);
+
+    await frajcoin.methods.approve(frajswapAddress, realSoldFrajAmount).send({
+      from: accounts[0],
+    });
+
+    await frajswap.methods.sellTokens(realSoldFrajAmount).send({
+      from: accounts[0],
+    });
+  };
+
   return (
     <>
       <main>
@@ -33,8 +49,12 @@ function App() {
           actionMethod={buyTokens}
           placeholder="Amount of ETH to sell"
         />
-        {/* <ActionForm actionName="SELL" />
-        <ActionForm actionName="STAKE" /> */}
+        <ActionForm
+          actionName="SELL"
+          actionMethod={sellTokens}
+          placeholder="Amount of FRAJ to sell"
+        />
+        {/* <ActionForm actionName="STAKE" /> */}
       </main>
     </>
   );
