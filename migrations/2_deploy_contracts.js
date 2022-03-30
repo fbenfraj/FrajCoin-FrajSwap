@@ -2,6 +2,8 @@ const FrajCoin = artifacts.require("FrajCoin");
 const FrajSwap = artifacts.require("FrajSwap");
 
 module.exports = function (deployer) {
-  deployer.deploy(FrajCoin);
-  deployer.deploy(FrajSwap, FrajCoin.address);
+  deployer.then(async () => {
+    await deployer.deploy(FrajCoin);
+    await deployer.deploy(FrajSwap, FrajCoin.address);
+  });
 };
