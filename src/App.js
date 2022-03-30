@@ -90,11 +90,24 @@ function App() {
             <br /> This project is for demonstration purpose only.
           </p>
         </section>
+        <section>
+          <img
+            src="/to-the-moon.gif"
+            alt="Elon Musk: To the moon!"
+            height="200px"
+          />
+        </section>
         <section className="action-forms">
           <ActionForm
             actionName="buy"
             actionMethod={buyTokens}
             placeholder="Amount of ETH to sell"
+          />
+          <img
+            src="/double-arrow.png"
+            alt="Double arrow"
+            height="150px"
+            id="double-arrow"
           />
           <ActionForm
             actionName="sell"
