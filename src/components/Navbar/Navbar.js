@@ -3,10 +3,10 @@ import "./Navbar.css";
 
 const Navbar = ({ account }) => {
   return (
-    <nav class="nav">
+    <nav className="nav">
       <input type="checkbox" id="nav-check" />
-      <div class="nav-header">
-        <div class="nav-title">
+      <div className="nav-header">
+        <div className="nav-title">
           <a
             href={"https://github.com/fbenfraj"}
             target="_blank"
@@ -18,7 +18,7 @@ const Navbar = ({ account }) => {
         </div>
       </div>
 
-      <div class="nav-links">
+      <div className="nav-links">
         <a
           href={"https://etherscan.io/address/" + account}
           target="_blank"
