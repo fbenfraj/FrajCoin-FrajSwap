@@ -1,7 +1,15 @@
-const ActionForm = ({ actionName, actionMethod }) => {
+import React, { useState } from "react";
+
+const ActionForm = ({ actionName, actionMethod, placeholder }) => {
+  const [value, setValue] = useState("");
+
   return (
-    <form onSubmit={actionMethod}>
-      <input />
+    <form onSubmit={(e) => actionMethod(e, value)}>
+      <input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder={placeholder}
+      />
       <button>{actionName}</button>
     </form>
   );
