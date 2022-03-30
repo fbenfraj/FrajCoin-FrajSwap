@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import web3 from "./ethereum/web3";
+import "./App.css";
+import ActionForm from "./components/ActionForm";
 
 function App() {
+  useEffect(async () => {
+    console.log(await web3.eth.getAccounts());
+  }, []);
+
+  const buyTokens = (e) => {
+    e.preventDefault();
+    alert("ok");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <main>
+        <ActionForm actionName="BUY" actionMethod={buyTokens} />
+        {/* <ActionForm actionName="SELL" />
+        <ActionForm actionName="STAKE" /> */}
+      </main>
+    </>
   );
 }
 
