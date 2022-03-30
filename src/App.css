@@ -1,3 +1,18 @@
+body {
+  color: #ffffff;
+  background-color: #383257;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 0;
+}
+
+a {
+  color: #1fc7d4;
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +50,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+}
+
+.main-subtitle {
+  margin-top: 0;
+}
+
+.presentation {
+  font-size: 30px;
+}
+
+.action-forms {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  margin-top: 100px;
 }
