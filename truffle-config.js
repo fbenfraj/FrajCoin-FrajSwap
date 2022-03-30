@@ -22,8 +22,8 @@ module.exports = {
       network_id: 4,
     },
   },
-  contracts_directory: "./src/contracts/",
-  contracts_build_directory: "./src/abis/",
+  contracts_directory: "./src/ethereum/contracts/",
+  contracts_build_directory: "./src/ethereum/abis/",
   compilers: {
     solc: {
       version: "0.8.13",
