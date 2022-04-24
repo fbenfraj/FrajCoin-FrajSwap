@@ -68,5 +68,5 @@ Don't forget to give the project a star! Thanks again!
 
 Contributors names and contact info
 
-BEN FRAJ Farouk - [@f_benfraj](https://twitter.com/f_benfraj) - farouk.ben-fraj@outlook.com
+BEN FRAJ Farouk - [@f_benfraj](https://twitter.com/f_benfraj) / farouk.ben-fraj@outlook.com
 Project Link: [https://github.com/fbenfraj/FrajCoin-FrajSwap.git](https://github.com/fbenfraj/FrajCoin-FrajSwap.git)
